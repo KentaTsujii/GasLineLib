@@ -19,6 +19,7 @@ import { ILineEvent,
          ILineGroupLeftEvent,
          isLineGroupLeftEvent,
          ILineUnFollowEvent} from "./interfaces";
+export * from "./interfaces";
 
 /**
  * LINEのwebhookのbodyです。

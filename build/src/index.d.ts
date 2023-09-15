@@ -1,5 +1,6 @@
 /// <reference types="google-apps-script" />
 import { ILineEvent, ILineWebhookBody, ILineMessageEvent, ILineMessage, ISource, IdeliveryContext } from "./interfaces";
+export * from "./interfaces";
 /**
  * LINEのwebhookのbodyです。
  */
