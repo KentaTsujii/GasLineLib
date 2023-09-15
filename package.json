@@ -2,7 +2,7 @@
   "name": "gaslinelib",
   "version": "1.0.0",
   "description": "Google apps script向けline操作ライブラリ",
-  "main": "build/index.js",
+  "main": "build/src/index.js",
   "directories": {
     "test": "test"
   },
@@ -23,6 +23,7 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/google-apps-script": "^1.0.68",
     "rollup": "^3.29.1",
     "typescript": "^5.2.2"
   },
