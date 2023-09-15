@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Google apps script向けline操作ライブラリ",
   "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "directories": {
     "test": "test"
   },
