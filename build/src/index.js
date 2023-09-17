@@ -14,7 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.analyze_webhook_body = exports.LineMessage = exports.LineWebhookBody = void 0;
+exports.get_user_info = exports.analyze_webhook_body = exports.LineMessage = exports.LineWebhookBody = void 0;
 var interfaces_1 = require("./interfaces");
 __exportStar(require("./interfaces"), exports);
 /**
@@ -134,4 +134,17 @@ function analyze_webhook_body(obj) {
     return new LineWebhookBody(obj);
 }
 exports.analyze_webhook_body = analyze_webhook_body;
+function get_user_info(channel_access_token, user_id) {
+    var url = "https://api.line.me/v2/bot/profile/".concat(user_id);
+    var header = {
+        'Authorization': "Bearer ".concat(channel_access_token)
+    };
+    var options = {
+        headers: header,
+        method: 'get',
+    };
+    var ret = UrlFetchApp.fetch(url, options);
+    return JSON.parse(ret.getContentText());
+}
+exports.get_user_info = get_user_info;
 //# sourceMappingURL=index.js.map

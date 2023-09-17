@@ -154,3 +154,25 @@ export class LineMessage implements ILineMessageEvent {
 export function analyze_webhook_body(obj: any){
   return new LineWebhookBody(obj);
 }
+
+export interface IUserInfo {
+  displayName: string
+  userId: string
+  language: string
+  pictureUrl: string
+  statusMessage: string
+}
+
+export function get_user_info(channel_access_token: string, 
+                              user_id: string): IUserInfo {
+  const url = `https://api.line.me/v2/bot/profile/${user_id}`;
+  const header = {
+    'Authorization': `Bearer ${channel_access_token}`
+  };
+  const options: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {
+    headers: header,
+    method: 'get',
+  };
+  const ret = UrlFetchApp.fetch(url, options);
+  return JSON.parse(ret.getContentText());
+}

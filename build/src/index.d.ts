@@ -38,4 +38,12 @@ export declare class LineMessage implements ILineMessageEvent {
  * @returns
  */
 export declare function analyze_webhook_body(obj: any): LineWebhookBody;
+export interface IUserInfo {
+    displayName: string;
+    userId: string;
+    language: string;
+    pictureUrl: string;
+    statusMessage: string;
+}
+export declare function get_user_info(channel_access_token: string, user_id: string): IUserInfo;
 //# sourceMappingURL=index.d.ts.map
